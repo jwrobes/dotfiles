@@ -46,7 +46,4 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Don't require saving before closing a buffer
-set hidden
-
 " vim:ft=vim

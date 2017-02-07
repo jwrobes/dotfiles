@@ -1,6 +1,8 @@
 " Vim Spec Runner - Smart spec (rspec) runner
 
 Plug 'gabebw/vim-spec-runner'
-map <leader>t <Plug>RunFocusedSpec
+map <leader>s <Plug>RunFocusedSpec
+map <Leader>t <Plug>RunCurrentSpecFile
+map <Leader>v <Plug>RunMostRecentSpec
 
 " vim:ft=vim

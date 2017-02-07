@@ -1,4 +1,5 @@
 " Endwise - Automatic insertion of closings like do..end
+" https://github.com/tpope/vim-endwise
 
 Plug 'tpope/vim-endwise'
 

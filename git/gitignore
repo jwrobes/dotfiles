@@ -2,6 +2,7 @@
 *.sw[nop]
 .bundle
 .byebug_history
+.env
 db/*.sqlite3
 log/*.log
 rerun.txt
@@ -11,7 +12,5 @@ tmp/**/*
 !tmp/cache/.keep
 *.pyc
 
-
-.project-notes
 .vimrc.local
 node_modules
