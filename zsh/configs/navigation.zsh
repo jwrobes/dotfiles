@@ -2,14 +2,9 @@
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-unsetopt auto_cd # with cdpath enabled, auto_cd gives too many false positives
+setopt auto_cd # with cdpath enabled, auto_cd gives too many false positives
 cdpath=(
-  $HOME/code \
-  $HOME/code/work/current \
-  $HOME/code/work \
-  $HOME/code/vim \
-  $HOME/code/alfred \
-  $HOME
+  $HOME/code
 )
 
 _cdpath_directories() {
