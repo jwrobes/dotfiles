@@ -1,103 +1,59 @@
-tap 'caskroom/cask'
-tap 'goles/battery'
-tap 'homebrew/boneyard'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
+# vim: syntax=ruby filetype=ruby
+
+# Lets us do `brew services restart postgres`, etc
 tap 'homebrew/services'
+
+# Old versions of some packages
 tap 'homebrew/versions'
-tap 'thoughtbot/formulae'
-tap 'universal-ctags/universal-ctags'
-brew 'openssl'
-brew 'readline'
-brew 'sqlite'
-brew 'python'
-brew 'libxml2'
-brew 'autoconf'
-brew 'automake'
-brew 'awscli'
-brew 'git'
-brew 'carthage'
-brew 'chrome-cli'
-brew 'chruby'
-brew 'ctags'
-brew 'diff-so-fancy'
-brew 'jpeg'
-brew 'libpng'
-brew 'libtiff'
-brew 'wxmac'
-brew 'erlang'
-brew 'elixir'
-brew 'ffind'
-brew 'fzf'
-brew 'go'
-brew 'graphviz'
+
+brew 'postgresql', restart_service: :changed
+brew 'coreutils'
+
+# Qt5.5 for capybara-webkit, because Qt 5.6 doesn't work except with the most
+# recent version
+tap 'homebrew/versions'
+brew 'qt55'
+# --overwrite: overwrite any Qt4 files that might be there
+# --force: required because qt55 is keg-only
+`brew link --overwrite --force qt55`
+
+# grep for ps
+brew 'pgrep'
+
+# The recommended way to use Heroku
 brew 'heroku'
-brew 'lua'
-brew 'highlight'
-brew 'hub'
-brew 'perl'
-brew 'imagemagick'
-brew 'oniguruma'
-brew 'jq'
-brew 'libevent'
-brew 'libffi'
-brew 'libyaml'
-brew 'mercurial'
-brew 'node'
-brew 'node@4'
-brew 'pcre'
-brew 'postgresql', restart_service: true
-brew 'pgcli'
-brew 'phantomjs'
-brew 'pkg-config'
-brew 'pngcrush'
-brew 'qt5'
-brew 'qt@5.5'
-brew 'reattach-to-user-namespace'
-brew 'redis', restart_service: true
-brew 'ruby'
-brew 'ruby-install'
-brew 'shellcheck'
-brew 'source-highlight'
-brew 'spark'
+
+# colorful diffs (alias diff='colordiff -u')
+brew 'colordiff'
+
+# a better ack/grep
 brew 'the_silver_searcher'
-brew 'tmux'
-brew 'trash'
-brew 'tree'
-brew 'utf8proc'
+
+# so :Rtags works
+brew 'ctags'
+# tap 'universal-ctags/universal-ctags/universal-ctags'
+# brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
+
+# It's vim
+brew 'mercurial'
 brew 'vim'
-brew 'watch'
-brew 'watchman'
-brew 'wget'
-brew 'youtube-dl'
-brew 'zplug'
-brew 'goles/battery/battery'
-brew 'thoughtbot/formulae/gitsh'
-brew 'thoughtbot/formulae/parity'
-brew 'thoughtbot/formulae/rcm'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
-cask 'acorn'
-cask 'arq'
-cask 'caffeine'
-cask 'cloak'
-cask 'dash'
-cask 'firefox'
-cask 'haskell-platform'
-cask 'licecap'
-cask 'marked'
-cask 'ngrok'
-cask 'omnifocus'
-cask 'qlcolorcode'
-cask 'qlimagesize'
-cask 'qlmarkdown'
-cask 'qlprettypatch'
-cask 'qlstephen'
-cask 'quicklook-csv'
-cask 'quicklook-json'
-cask 'screenflow'
-cask 'screenhero'
-cask 'skype'
-cask 'suspicious-package'
-cask 'vlc'
-cask 'webpquicklook'
-cask 'yakyak'
+
+# Fast GitHub client
+brew 'hub'
+
+# Fuzzy finder
+brew 'fzf'
+
+# thoughtbot stuff like rcm
+tap 'thoughtbot/formulae'
+brew 'rcm'
+
+# Install zsh 5.2+ (OS X ships with 5.0) to fix this issue:
+# https://github.com/robbyrussell/oh-my-zsh/issues/4932
+brew 'zsh'
+
+if ENV.fetch("SHELL", "") != "/usr/local/bin/zsh"
+  puts "To use the Homebrew-installed ZSH:"
+  puts "  sudo echo /usr/local/bin/zsh >> /etc/shells"
+  puts "  chsh -s /usr/local/bin/zsh"
+end

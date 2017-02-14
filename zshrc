@@ -1,7 +1,6 @@
 source ~/.zplug/init.zsh
 
 zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
 zplug 'zsh-users/zsh-completions', defer:3
 
