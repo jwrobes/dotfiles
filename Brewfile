@@ -48,6 +48,9 @@ brew 'fzf'
 tap 'thoughtbot/formulae'
 brew 'rcm'
 
+# install tmuxinator to configure tmux setup
+brew 'tmuxinator'
+
 # Install zsh 5.2+ (OS X ships with 5.0) to fix this issue:
 # https://github.com/robbyrussell/oh-my-zsh/issues/4932
 brew 'zsh'
