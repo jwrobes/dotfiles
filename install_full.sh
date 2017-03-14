@@ -20,10 +20,10 @@ if is_osx; then
   brew update
   brew tap homebrew/bundle
   brew bundle
-#  for brewfile in */Brewfile; do
-#   echo "install $brewfile"
-#    brew bundle --file="$brewfile"
-#  done
+  for brewfile in */Brewfile; do
+   echo "install $brewfile"
+    brew bundle --file="$brewfile"
+  done
 fi
 
 #echo "Check if rbenv or rvm exists"

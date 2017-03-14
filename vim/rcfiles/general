@@ -47,3 +47,5 @@ set complete+=kspell
 set diffopt+=vertical
 
 " vim:ft=vim
+
+inoremap jk <ESC>
