@@ -25,7 +25,11 @@ augroup vimrcEx
     \ endif
 augroup END
 
+" Copy file path
+nnoremap <leader>u :let @+=expand('%')<CR>
+
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
 " vim:ft=vim
+"

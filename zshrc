@@ -22,3 +22,5 @@ load_all_files_in() {
 load_all_files_in before
 load_all_files_in ""
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

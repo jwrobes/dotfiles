@@ -46,6 +46,15 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" Copy file path
+nnoremap <mapleader>u :let @+=expand('%')<CR>
+
+" Unhighlight
+nnoremap <mapleader>q :nohlsearch<CR>o
+
 " vim:ft=vim
 
+let g:instant_markdown_autostart = 0
+
 inoremap jk <ESC>
+

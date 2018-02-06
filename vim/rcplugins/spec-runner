@@ -5,4 +5,7 @@ map <leader>s <Plug>RunFocusedSpec
 map <Leader>t <Plug>RunCurrentSpecFile
 map <Leader>v <Plug>RunMostRecentSpec
 
+" Using tslime.vim:
+let g:spec_runner_dispatcher = 'call Send_to_Tmux("clear\n{command}\n")'
+
 " vim:ft=vim

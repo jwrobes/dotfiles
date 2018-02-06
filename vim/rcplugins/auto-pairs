@@ -1,0 +1,5 @@
+" Easy Align - operators for aligning characters across lines
+
+Plug 'jiangmiao/auto-pairs'
+
+" vim:ft=vim
