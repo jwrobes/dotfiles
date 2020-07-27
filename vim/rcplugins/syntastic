@@ -1,5 +1,0 @@
-" Syntastic for highlighting syntax errors
-
-" Plug 'scrooloose/syntastic'
-
-" vim:ft=vim

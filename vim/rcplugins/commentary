@@ -1,8 +1,0 @@
-" Commentary - Comment / uncomment via text operator w/ text objects
-" https://github.com/tpope/vim-commentary
-" gc is the command
-"-------------------------------------------------------------------
-
-Plug 'tpope/vim-commentary'
-
-" vim:ft=vim
